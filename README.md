@@ -22,5 +22,6 @@ This repository contains some code samples to self-learn OpenGL, Boost C++ and R
     cmake ../..
     make
     popd
+    ```
 
 The executable `gl_init` is created in `cmake/build`. On WSL2, X11 and graphics drivers cause several problems, hence, the executable doesn't open any window currently. However, on a proper Linux machine, the code should run perfectly fine.
