@@ -12,7 +12,7 @@ include_directories(
 )
 
 set(GLEW_LIBRARY
-    /lib/x86_64-linux-gnu/libGLEW.so)
+    /usr/lib/x86_64-linux-gnu/libGLEW.so)
 
 set(ALL_LIBS
     ${OPENGL_LIBRARY}
