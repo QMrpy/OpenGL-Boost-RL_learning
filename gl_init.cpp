@@ -43,14 +43,15 @@ int main() {
     }
 
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+    
+    /* Blue Color */
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
     do {
         glClear(GL_COLOR_BUFFER_BIT);
-
         glfwSwapBuffers(window);
         glfwPollEvents();
-
+        
     } while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0);
 
     glfwTerminate();
