@@ -30,9 +30,16 @@ add_definitions(
     -lglfw
 )
 
-add_executable(gl_init
-    ./gl_init.cpp)
+set(triangle_srcs "./gl_triangle.cpp")
+set(triangle_hdrs "./gl_triangle.hpp")
 
-target_link_libraries(gl_init
+add_library(gl_triangle
+    ${triangle_srcs}
+    ${triangle_hdrs})
+
+add_executable(main "./main.cpp")
+
+target_link_libraries(main
+    gl_triangle
     ${ALL_LIBS})
 
