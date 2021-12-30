@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <vector>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -50,8 +51,13 @@ int main() {
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
     unsigned int shaderProgram, VAO, VBO;
-            
-    Triangle* triangle = new Triangle();
+    std::vector<float> vertices({
+        -0.5f, -0.f, 0.0f, 
+        0.5f, -0.5f, 0.0f,  
+        0.0f,  0.6f, 0.0f   
+    }); 
+
+    Triangle* triangle = new Triangle(vertices);
     triangle->createShaders(shaderProgram, VAO, VBO);
 
     do {

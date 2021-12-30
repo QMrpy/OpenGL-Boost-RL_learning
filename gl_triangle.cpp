@@ -1,6 +1,6 @@
 #include "gl_triangle.hpp"
 
-Triangle::Triangle() {
+Triangle::Triangle(std::vector<float> vertices) {
     vertexShaderSource = "#version 330 core\n"
         "layout (location = 0) in vec3 aPos;\n"
         "void main()\n"
@@ -14,6 +14,8 @@ Triangle::Triangle() {
         "{\n"
         "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
         "}\n\0";
+
+    std::move(vertices.begin(), vertices.end(), this->vertices);
 }
 
 void Triangle::compileShaders(unsigned int& shaderProgram) {
@@ -56,12 +58,6 @@ void Triangle::compileShaders(unsigned int& shaderProgram) {
 }
 
 void Triangle::createShaders(unsigned int& shaderProgram, unsigned int& VAO, unsigned int& VBO) {
-    float vertices[9] = {
-        -0.5f, -0.5f, 0.0f, 
-        0.5f, -0.5f, 0.0f,  
-        0.0f,  0.5f, 0.0f   
-    }; 
-
     compileShaders(shaderProgram);
 
     glGenVertexArrays(1, &VAO);
