@@ -15,7 +15,7 @@ Triangle::Triangle(std::vector<float> vertices) {
         "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
         "}\n\0";
 
-    std::move(vertices.begin(), vertices.end(), this->vertices);
+    std::copy(vertices.begin(), vertices.end(), this->vertices);
 }
 
 void Triangle::compileShaders(unsigned int& shaderProgram) {
