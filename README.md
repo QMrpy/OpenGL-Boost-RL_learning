@@ -2,9 +2,9 @@
 
 This repository contains some code samples to self-learn OpenGL, Boost C++ and RL.
 
-## Steps to build the code on Linux (Ubuntu 20.04)
+## Steps to build the code on Linux (Ubuntu)
 
-1. Install the required libraries.
+1. Assuming that CMake is installed, install the required libraries.
     ```
     sudo apt-get install mesa-utils libglfw3 libglfw3-dev libglew-dev libglm-dev
     ```
@@ -24,4 +24,4 @@ This repository contains some code samples to self-learn OpenGL, Boost C++ and R
     popd
     ```
 
-The executable `gl_init` is created in `cmake/build`. On WSL2, X11 and graphics drivers cause several problems, hence, the executable doesn't open any window currently. However, on a proper Linux machine, the code should run perfectly fine.
+The executable `main` is created in `cmake/build`. The code runs to create an orange triangle with given vertices on a greyish-green background. The code must be run on Linux (not WSL2).
