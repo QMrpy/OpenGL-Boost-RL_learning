@@ -15,7 +15,7 @@ class Triangle {
         void createShaders(unsigned int& shaderProgram, unsigned int& VAO, unsigned int& VBO);
         void display(unsigned int& shaderProgram, unsigned int& VAO);
         void deleteShaders(unsigned int& shaderProgram, unsigned int& VAO, unsigned int& VBO);
-        
+
     private:
         const char* vertexShaderSource;
         const char* fragmentShaderSource;

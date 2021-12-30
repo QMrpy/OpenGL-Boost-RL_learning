@@ -19,7 +19,7 @@ void error_callback(int error, const char* description) {
 
 int main() {
     glfwSetErrorCallback(error_callback);
-    
+
     if (!glfwInit()) {
         std::cout << "Failed to initialize GLFW." << std::endl;
         return -1;
@@ -48,10 +48,9 @@ int main() {
     }
 
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-    
-    /* Create Triangle */
+
     unsigned int shaderProgram, VAO, VBO;
-    
+            
     Triangle* triangle = new Triangle();
     triangle->createShaders(shaderProgram, VAO, VBO);
 
@@ -65,10 +64,10 @@ int main() {
         glfwPollEvents();
         
     } while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0);
-    
+
     triangle->deleteShaders(VAO, VBO, shaderProgram);
     delete triangle;
-    
+
     glfwTerminate();
     return 0;
 }
